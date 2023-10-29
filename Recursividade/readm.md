@@ -1,0 +1,3 @@
+Uma função recursiva é uma função que chama a si mesma durante sua execução. Em termos simples, uma função recursiva é uma função que se define em termos de si mesma. Isso pode ser útil para resolver problemas que podem ser divididos em subproblemas semelhantes.
+
+Para que uma função recursiva funcione corretamente, é importante ter um caso base, que é a condição que determina quando a recursão deve parar. Sem um caso base adequado, a função recursiva continuaria chamando a si mesma indefinidamente, levando a um estouro de pilha (stack overflow) e um erro.
