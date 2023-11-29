@@ -2,10 +2,12 @@
 
 using namespace std;
 
+/*@param
+n : numero de valores
+resultado : ponteiro que armazena o resultado da somatoria
+*/
 void media(int n, float *resultado)
 {
-
-    int qtd_numeros = n;
     int x;
     if (n == 0)
         return;
