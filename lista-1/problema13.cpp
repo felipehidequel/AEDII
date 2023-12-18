@@ -4,31 +4,27 @@ using namespace std;
 
 typedef long long ll;
 
-#define ANO 365
-#define DIAS 738231
+int zeller_day(int dd, int mm, int yy){
+       if (mm < 3) {
+        mm += 12;
+        yy--;
+    }
+    
+    return (dd + ((13*(mm+1))/5)+yy+(yy/4)-(yy/100)+(yy/400))%7;
+}
 
 int main (){
     int dia, mes, ano;
-    ll sum_days;
     string meses[] = {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"
     , "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
 
-    dia = 02;
-    mes = 3;
-    ano = 2001;
+    cin>> dia >> mes >> ano;
     cout << dia << " de " << meses[mes-1] << " de " << ano << endl;
 
-    int ano_bissexto = 0;
+    int h = zeller_day(dia, mes, ano);
+    string semana[] = {"Saturday", "Sunday","Monday", "Tuesday"
+    , "Wednesday", "Thursday", "Friday"};
 
-    for (int i = 0; i < ano; i++){
-        if ((i%4 == 0 || i%400 == 0) && i%100 != 0)
-            ano_bissexto++;
-    }
-    int qtd_dias = DIAS - (((ano - ano_bissexto) * ANO) + ano_bissexto * 366);
-
-    string semana[] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
-    , "Saturday", "Sunday"};
-
-    cout << semana[qtd_dias%7+1] << endl;
+    cout << semana[h] << endl;
 
 }
